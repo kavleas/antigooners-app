@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Antigooning Challenge</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Firebase setup -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+    import { getDatabase } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyD8rBPGRvCZEHZON9VA3tnWdLDnaOIslcA",
+      authDomain: "anti-gooning-challenge.firebaseapp.com",
+      projectId: "anti-gooning-challenge",
+      storageBucket: "anti-gooning-challenge.firebasestorage.app",
+      messagingSenderId: "915847556113",
+      appId: "1:915847556113:web:78fbab7f35c9cdcf3c95b0"
+    };
+
+    // Global Firebase app and db instances
+    window.firebaseApp = initializeApp(firebaseConfig);
+    window.firebaseDb = getDatabase(firebaseApp);
+  </script>
+
+  <!-- Your app logic -->
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Antigooning Challenge</h1>
+    <div id="timer"></div>
+    <div id="choice-section">
+      <p>Έκανες goon σήμερα;</p>
+      <button id="btn-no">Όχι</button>
+      <button id="btn-yes">Ναι</button>
+    </div>
+    <hr />
+    <h2>Leaderboard</h2>
+    <div id="leaderboard"></div>
+    <hr />
+    <div id="user-section">
+      <input type="text" id="username" placeholder="Βάλε όνομα" />
+      <button id="btn-add-user">Επιλογή χρήστη</button>
+    </div>
+  </div>
+</body>
+</html>
